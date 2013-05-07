@@ -15,6 +15,14 @@
 @orange:                #f89406;
 @baseLineHeight:        18px;
 
+// Flat UI
+@clouds: #ECF0F1;
+@midnight-blue: #2C3E50;
+@silver: #BDC3C7;
+@turquoise: #1ABC9C;
+@sun-flower: #F1C40F;
+@peter-river: #3498DB;
+
 // Mixins
 
 // Border Radius
@@ -62,6 +70,21 @@
     background-repeat: repeat-x;
     filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor)); // IE9 and down
   }
+}
+
+// Box shadow
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+
+// Bootstrap fix
+.dropdown-menu {
+  color: #fff;
+  background-color: @midnight-blue;
+  border: 0;
+  .box-shadow(none);
 }
 
 @import "../less/datepicker.less";
